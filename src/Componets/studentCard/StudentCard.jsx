@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
+import StudentMenu from "./StudentMenu";
 import "./studentCard.css"
 
 const  studentCard = ({student}) =>{
+  const [visibility, setVisibility] = useState(false)
+  const {resume,linkedin, github, mockInterview} = student.certifications
+
+  let progress =  resume && linkedin && github && mockInterview
+
+    
+
+
     return (
         
 
@@ -19,8 +28,10 @@ const  studentCard = ({student}) =>{
                 <div className="student-card__DOB">
                   Birthday: {student.dob}
                 </div>
-  
+                <StudentMenu visibility={visibility} setVisibility={setVisibility}/>
               </div>
+              
+              {progress ? (<span>On Track</span>) : (<span>Off Track</span>)}
           </div>
   )
   

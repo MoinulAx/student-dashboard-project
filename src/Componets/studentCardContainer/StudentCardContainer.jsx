@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import StudentCard from "../studentCard/StudentCard";
 import "./studentCardContainer.css"
 
-const StudentCardContianer = ({studentData}) => {
-    const totalStudents = studentData.length
+const StudentCardContainer = ({studentData,students, cohort, setStudents}) => {
+    const totalStudents = students.length
+
+    useEffect(() => {
+      const filtered = studentData.filter(student =>{ 
+        if(cohort === "All Students"){return true}
+        return student.cohort.cohortCode === cohort
+      })
+      setStudents(filtered)
+    },[cohort])
+
     return(
         <div className="student-card-container">
             <h1>All Students</h1>
             <p>Total Students: {totalStudents}</p>
-        {studentData.map(student=>{
+        {students.map(student=>{
             return(
             
               <StudentCard student = {student} key = {student.id}/>
@@ -23,4 +32,4 @@ const StudentCardContianer = ({studentData}) => {
 
 }
 
-export default StudentCardContianer;
+export default StudentCardContainer;

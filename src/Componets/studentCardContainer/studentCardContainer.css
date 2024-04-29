@@ -1,4 +1,7 @@
 .student-card-container{
     width: 600px;
     margin: 20px;
+    overflow-y: auto;
+    
+
 }

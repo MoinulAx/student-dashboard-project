@@ -1,6 +1,17 @@
 body{
     padding: 0px;
     margin: 10px;
-    height: 100vh;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+
+}
+
+.container{
+    grid-template-columns: 30% 70%;
+    height: 100vh;
+    display: grid;
+
+
+
 }
