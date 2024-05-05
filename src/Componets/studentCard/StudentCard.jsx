@@ -30,8 +30,11 @@ const  studentCard = ({student}) =>{
                 </div>
                 <StudentMenu visibility={visibility} setVisibility={setVisibility}/>
               </div>
-              
               {progress ? (<span>On Track</span>) : (<span>Off Track</span>)}
+                
+              
+              
+              
           </div>
   )
   

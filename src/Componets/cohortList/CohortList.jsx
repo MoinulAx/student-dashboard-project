@@ -20,7 +20,7 @@ const cohortList = ({studentData, cohort, setCohort}) =>{
                 <div onClick = {handleClick} className="cohort-list__item" id={cohort}>
                     {cohort}
                 </div>
-
+                    
                )
 
             })}
